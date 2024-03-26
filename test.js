@@ -616,6 +616,5 @@
 // if (typeof(a) == 'number') console.log('why?');   // в данном случае a остаётся number, так как метод toString() просто возвращает значение
 // // с типом строка, а сама переменная остаётся числом, как и объявлена вначале
 
-const obj7 = { a: 1 };
-const descriptor = Object.getOwnPropertyDescriptor(obj7, 'a');
-console.log(descriptor);
+const str = 375;
+console.log(str.toString().length);
