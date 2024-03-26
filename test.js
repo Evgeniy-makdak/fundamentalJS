@@ -607,7 +607,7 @@
 // // d = {...d }           выдаёт ошибку, так как d константа и не может быть деструктурирована
 // // console.log(a)        выдаёт ошибку, так как a не определена в функциональной области, а let имеет блочную область видимости
 // console.log(b)
-// console.log(z) 
+// console.log(z)
 // console.log(d)
 // console.log(f)
 
@@ -616,3 +616,6 @@
 // if (typeof(a) == 'number') console.log('why?');   // в данном случае a остаётся number, так как метод toString() просто возвращает значение
 // // с типом строка, а сама переменная остаётся числом, как и объявлена вначале
 
+const obj7 = { a: 1 };
+const descriptor = Object.getOwnPropertyDescriptor(obj7, 'a');
+console.log(descriptor);

@@ -1535,15 +1535,6 @@
 // </body> */
 // }
 
-// 5.1.5 Даны инпуты, в которые вводятся числа. Сделайте так, чтобы по потери фокуса в любом инпуте его значение возводилось в квадрат.
-// html:
-// <body>
-//     <input type="button" class="paragraph1" onclick="showResOne()" style="width: 104px; height: 20px; border: solid 0.5px; margin-bottom: 10px; font-size: small; display: flex; justify-content: center; cursor: pointer;" value="2">
-//     <input type="text" class="paragraph2" onblur="showResTwo()" style="width: 100px; height: 20px; border: solid 0.5px; text-align: center; cursor: pointer;" value="3">
-//     <button onclick="toNull()">начальные значения</button>
-//     <script src="tasks.js"></script>
-// </body>
-
 // 5.2.1 Дан абзац и кнопка. По нажатию на кнопку найдите сумму чисел от 1 до 100 и запишите результат в абзац.
 // const variant = document.getElementsByClassName("paragraph");
 
@@ -2011,7 +2002,6 @@
 // };
 
 // 5.5.2 Даны два инпута и кнопка. В инпуты вводятся числа. По нажатию на кнопку заполните массив целыми числами от первого введеного числа до последнего.
-// 5.5.2 Даны два инпута и кнопка. В инпуты вводятся числа. По нажатию на кнопку заполните массив целыми числами от первого введеного числа до последнего.
 // const inputStart = document.querySelector('.inpstart');
 // const inputEnd = document.getElementsByClassName('inpend')[0];
 
@@ -2244,7 +2234,7 @@
 //   document.querySelector(".input").value = res;
 // }
 
-// 5.8.3 Дан инпут и абзац. В инпут через запятую вводятся числа. По потери фокуса найдите сумму введенных чисел и выведите ее в абзац.
+// 5.8.3 Дан инпут и абзац. В инпут через запятую вводятся числа. По потере фокуса найдите сумму введенных чисел и выведите ее в абзац.
 // const inp = document.querySelector('.input');
 
 // function sumInp() {
@@ -3473,11 +3463,154 @@
 
 //                                    ****************************************
 
-// Задача 5
-// Ограниченная активация ячеек таблицы
+// Задача 66
+// Подсчет элементов массива
 
-// Дана таблица произвольного размера. Пусть по нажатию на ячейку таблицы эта ячейка как-то активируется, например, красится красным фоном.
-// Сделайте так, чтобы, если активировано 5 ячеек подряд по горизонтали или по вертикали, больше никаких ячеек активировать было нельзя.
+// Дан массив. Подсчитайте количество различных элементов в нем. В качестве результата верните объект, в котором ключами будут элементы массива,
+// а значениями - их количество в массиве.
+
+// const arr = [31, 20, 8, 125, 8, 20, 21, 31, 31, 8, 8, 8];
+
+// let countElements = arr.reduce((acc, el) => {
+//   if (el in acc) acc[el]++;
+//   else acc[el] = 1;
+//   return acc;
+// }, {});
+
+// console.log(countElements);
+
+// Задача 67
+// Самое популярное слово.
+// Дан текст. Найдите самое часто встречающееся слово в этом тексте.
+
+// const sentanse = 'is what what is this is off what what';
+
+// const sentanseArrow = sentanse.split(' ');
+// let popularObj = sentanseArrow.reduce((acc, word) => {
+//   if (word in acc) acc[word]++;
+//   else acc[word] = 1;
+//   return acc;
+// }, {});
+
+// console.log(popularObj);
+
+// Задача 70
+// Группировка массива по первым буквам
+// Дан произвольный массив со словами, начинающимися на различные буквы, например, вот такой:
+// let arr = ['axx', 'bxx', 'cxx', 'ayy', 'byy', 'cyy', 'azz', 'bzz', 'czz'];
+
+// Преобразуйте этот массив в объект, в котором ключами будут первые буквы слов, а значениями массивы слов, начинающихся на эти буквы:
+// {
+//   'a': [
+//     'axx', 'ayy', 'azz',
+//   ],
+//   'b': [
+//     'bxx', 'byy', 'bzz',
+//   ],
+//   'c': [
+//     'cxx', 'cyy', 'czz',
+//   ],
+// }
+
+// function selectArr(arr) {
+//   let arrToObject = {};
+//   for (let i = 0; i < arr.length; i++) {
+//     let firstChar = arr[i][0];
+//     if (firstChar in arrToObject) {
+//       arrToObject[firstChar].push(arr[i]);
+//     } else {
+//       arrToObject[firstChar] = [arr[i]];
+//     }
+//   }
+//   return arrToObject;
+// }
+
+// console.log(selectArr(arr));
+
+// Задача 71
+// Сортировка массива объектов
+// Дан массив объектов.
+// Выполните сортировку этого массива по заданному полю (по имени, возрасту или зарплате).
+
+// const arrObj = [
+//   {
+//     name: 'user3',
+//     age: 31,
+//     salary: 100,
+//   },
+//   {
+//     name: 'user1',
+//     age: 32,
+//     salary: 300,
+//   },
+//   {
+//     name: 'user2',
+//     age: 33,
+//     salary: 200,
+//   },
+// ]
+
+// function sortArray(arrObj, descript) {
+//   return arrObj.sort((a, b) => a[descript] - b[descript]);
+// }
+
+// console.log(sortArray(arrObj, "age"));
+
+// Задача 73
+// Центральная ячейка таблицы
+// Дана прямоугольная HTML таблица с нечетным количеством рядов и колонок. По нажатию на кнопку выделите центральную ячейку этой таблицы.
+
+// const table = document.querySelector('.table');
+// const cells = table.getElementsByTagName('td');
+// const cellLength = cells.length;
+
+// function selectCell() {
+//   const cellN = Math.floor(cellLength / 2);
+//   const selectedCell = cells[cellN];
+//   selectedCell.style.background = 'yellow';
+// }
+
+// <body>
+//     <div class="container">
+//       <table class="table" border="1">
+//         <tr>
+//             <td>Ячейка 1</td>
+//             <td>Ячейка 2</td>
+//             <td>Ячейка 3</td>
+
+//         </tr>
+//         <tr>
+//             <td>Ячейка 6</td>
+//             <td>Ячейка 7</td>
+//             <td>Ячейка 8</td>
+
+//         </tr>
+//         <tr>
+//             <td>Ячейка 11</td>
+//             <td>Ячейка 12</td>
+//             <td>Ячейка 13</td>
+
+//         </tr>
+//         <tr>
+//             <td>Ячейка 16</td>
+//             <td>Ячейка 17</td>
+//             <td>Ячейка 18</td>
+
+//         </tr>
+//         <tr>
+//             <td>Ячейка 21</td>
+//             <td>Ячейка 22</td>
+//             <td>Ячейка 23</td>
+
+//         </tr>
+//     </table>
+
+//     <button class="button" onclick=selectCell()>средняя ячейка</button>
+
+//     </div>
+
+//     <script src="./archive.js"></script>
+//   </body>
 
 //                                    ****************************************
 //                                    ****************************************
@@ -3603,3 +3736,470 @@
 // console.log(findShort("Let's travel abroad shall we"));
 
 //                                    ****************************************
+
+// Напишите функцию, которая принимает целое положительное число n, суммирует все кубические значения от 1 до n (включительно) и
+// возвращает эту сумму.
+// Предположим, что входное n всегда будет целым положительным числом.
+
+// Пример:
+// 2 --> 9 (1 + 8)
+// 3 --> 36 (1 + 8 + 27)
+
+// function sumCubes(n) {
+//   let summer3 = [];
+//   for (let i = 1; i <= n; i++) {
+//     summer3.push(i ** 3);
+//   };
+//   let sumCubes = summer3.reduce((acc, el) => {
+//     return acc + el;
+//   });
+//   return sumCubes;
+// };
+
+// console.log(sumCubes(3));
+
+//                                    ****************************************
+
+// Создайте функцию, которая проверяет, делится ли число n на два числа x И y. Все входные данные - положительные ненулевые числа.
+
+// Пример:
+// isDivisible(3,3,4) => false
+// isDivisible(12,3,4) => true
+// isDivisible(8,3,4) => false
+
+// function isDivisible(n, x, y) {
+//   // if (n % x === 0 && n % y === 0) {
+//   //   return true;
+//   // } else return false;
+//   return true ? n % x === 0 && n % y === 0 : false;
+// };
+
+// console.log(isDivisible(11, 3, 4));
+
+//                                    ****************************************
+
+// Нужно создать метод, который корректирует заданную временную строку.
+// При добавлении возникла проблема, поэтому многие временные строки сломаны.
+// Время форматируется с использованием 24-часовых часов, то есть с 00:00:00 до 23:59:59.
+
+// Пример:
+// "09:10:01" -> "09:10:01"
+// "11:70:10" -> "12:10:10"
+// "19:99:99" -> "20:40:39"
+// "24:01:01" -> "00:01:01"
+
+// function timeCorrect(timestring) {
+//   const timeArrow = timestring.split(':');
+//   let correctTime = [];
+//   if (timeArrow[2] >= 60) {
+//     timeArrow[1] = +timeArrow[1] + Math.floor(timeArrow[2] / 60);
+//     timeArrow[2] = timeArrow[2] % 60;
+//   } else {
+//     timeArrow[2] = timeArrow[2];
+//   }
+//   if (timeArrow[1] >= 60) {
+//     timeArrow[0] = +timeArrow[0] + Math.floor(timeArrow[1] / 60);
+//     timeArrow[1] = timeArrow[1] % 60;
+//   } else {
+//     timeArrow[1] = timeArrow[1];
+//   }
+//   if (timeArrow[0] >= 24) {
+//     timeArrow[0] = timeArrow[0] - 24;
+//   }
+//   for (let i = 0; i < timeArrow.length; i++) {
+//     correctTime.push(timeArrow[i]);
+//   }
+
+//   return correctTime.join(':');
+// }
+
+// console.log(timeCorrect('24:01:01'));
+
+//                                    ****************************************
+
+// Напишите функцию так, чтобы она возвращала количество позиций, в которых входные строки не совпадают.
+
+// Пример:
+// const a = 'I like turtlesuyt';
+// const b = 'I like turkeysuy';
+// // Result: 3
+
+// function hamming(a, b) {
+//   let counter = 0;
+//   for (let i = 0; i < a.length; i++) {  // Если a.length >= b.length
+//     if (a[i] !== b[i]) {
+//       counter++;
+//     }
+//   }
+//   return `Result: ${counter}`;
+// }
+
+// console.log(hamming(a, b));
+
+//                                    ****************************************
+
+// Реализуйте функцию, которая получает два адреса IPv4 и возвращает количество адресов между ними (включая первый, исключая последний).
+// Все входные данные будут действительными адресами IPv4 в виде строк. Последний адрес всегда будет больше первого.
+
+// Пример:
+// * With input "10.0.0.0", "10.0.0.50"  => return   50
+// * With input "10.0.0.0", "10.0.1.0"   => return  256
+// * With input "20.0.0.10", "20.0.1.0"  => return  246
+
+// function howManyAdress(ip1, ip2) {
+//   const ip1ToDecimal = ip1.split('.');
+//   const ip2ToDecimal = ip2.split('.');
+//   let ipBetween =
+//     (ip2ToDecimal[0] - ip1ToDecimal[0]) * 256 ** 3 +
+//     (ip2ToDecimal[1] - ip1ToDecimal[1]) * 256 ** 2 +
+//     (ip2ToDecimal[2] - ip1ToDecimal[2]) * 256 +
+//     (ip2ToDecimal[3] - ip1ToDecimal[3]);
+//     return ipBetween;
+// };
+
+// console.log(howManyAdress("20.0.0.10", "20.0.1.0"));
+
+//                                    ****************************************
+
+// Реализуйте функцию generateRange, которая принимает три аргумента (start, stop, step)и возвращает диапазон целых чисел от start
+// до stop(включительно) с шагом step
+
+// start < stop
+// step > 0
+
+// Пример:
+// (1, 10, 1)  //  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// (-10, 1, 1)  //  [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1]
+// (1, 15, 20)  //  [1]
+
+// function generateRange(min, max, step){
+//   let resArr = [];
+//   for (let i = min; i <= max; i+=step) {
+//     resArr.push(i);
+//   };
+//   return resArr;
+// };
+
+// console.log(generateRange(1, 16, 5));
+
+//                                    ****************************************
+
+// function pattern(n) {
+//   let output = '';
+//   for (let i = 1; i <= n; i++) {
+//     for (let j = 1; j <= i; j++) {
+//       output += i;
+//     };
+//     output += '\n';
+//   };
+//   return output;
+// };
+
+// console.log(pattern(5));
+// Нужно написать шаблон функции, который возвращает
+// определённый шаблон (смотрите пример) на п строк.
+// Если n < 1, то он должен вернуть пустую строку.
+
+// Пример:
+// 1
+// 22
+// 333
+// 4444
+// 55555
+
+// Используйте \n в строке, чтобы перейти к следующей строке
+
+//                                    ****************************************
+
+// Функция возвращает true, если первый переданный аргумент (строка) заканчивается вторым аргументом (тоже строка)
+
+// Пример:
+// solution('abc', 'bc')  //  returns true
+// solution('abc', 'd')  //  returns false
+
+// function solution(str, ending){
+//   const secondLength = ending.length;
+//   let newStr = str.slice(str.length - secondLength, str.length);
+//   return newStr === ending ? true : false;
+// };
+
+// console.log(solution('abc', 'd'));
+
+//                                    ****************************************
+
+// Реализовать функцию разности, которая вычитает один список из другого и возвращает результат.
+// Нужно удалить все значения из списка a, которые присутствуют в списке b, сохраняя их порядок
+
+// Пример:
+// arrayDiff([1,2],[1])  //  [2]
+// arrayDiff([1,2,2,2,3],[2])  //  [1,3]
+
+// function arrayDiff(a, b) {
+//   let diffArray = [];
+//   for (let i = 0; i < a.length; i++) {
+//     if (a[i] !== b[0]) {
+//       diffArray.push(a[i]);
+//     };
+//   };
+//   return diffArray;
+// };
+
+// console.log(arrayDiff([1,2,2,2,3],[2]));
+
+//                                    ****************************************
+
+// Задав строку str, переверните ее и уберите все неалфавитные символы.
+// Примечание: Строка состоит из строчных латинских букв, цифр и символов.
+
+// Пример:
+// reverseLetter("krishan") => "nahsirk"
+// reverseLetter("ab23c") => "cba"
+
+// function reverseLetter(str) {
+//   let resString = '';
+//   const alphabet = 'abcdifghijklmnopqrstuvwxyz'
+//   for (let letter of str) {
+//     if (alphabet.includes(letter)) {
+//       resString += letter;
+//     };
+//   };
+//   return resString.split('').reverse().join('');
+// };
+
+// console.log(reverseLetter("ab23c"));
+
+//                                    ****************************************
+
+// Мы хотим узнать индекс гласных в заданном слове, например, в слове super есть две гласные (вторая и четвертая буквы).
+
+// Пример:
+// Mmmm  => []
+// Super => [2,4]
+// Apple => [1,5]
+// YoMama => [1,2,4,6]
+
+// function vowelIndices(word) {
+//   const vowel = ['a', 'e', 'i', 'o', 'u', 'y'];
+//   let resArr = [];
+//   for (let i = 0; i < word.length; i++) {
+//     if (vowel.includes(word[i].toLowerCase())) {
+//       resArr.push(i + 1);
+//     }
+//   }
+//   return resArr;
+// }
+
+// console.log(vowelIndices('Apple'));
+
+//                                    ****************************************
+
+// Создайте функцию, которая принимает положительное целое число и возвращает следующее большее число, которое можно получить путем
+// перестановки его цифр
+
+// Пример:
+// 12 ==> 21
+// 513 ==> 531
+// 2017 ==> 2071
+
+// Если цифры не могут быть переставлены в большее число, верните -1
+// 9 ==> -1
+// 111 ==> -1
+// 531 ==> -1
+
+// function getPermutations(n) {
+//   let m = n;
+//   let arr = [];
+//   arr.push(m);
+//   while (m.toString().length === n.toString().length) {
+//     let sortedM = m
+//       .toString()
+//       .split('')
+//       .sort((a, b) => a - b)
+//       .join('');
+//     let sortedN = n
+//       .toString()
+//       .split('')
+//       .sort((a, b) => a - b)
+//       .join('');
+//     if (sortedM === sortedN) {
+//       ++m;
+//       arr.push(m - 1);
+//     } else {
+//       ++m;
+//     }
+//   }
+//   if (arr.slice(2, 3).length > 0 ) {
+//     return arr.slice(2, 3).toString();
+//   } else return '-1';
+// }
+
+// console.log(getPermutations(2017));
+
+//                                    ****************************************
+
+// Завершите функцию, которая возвращает true, если часть str1 символов можно переставить для соответствия str2,
+// и возвращает false в противном случае.
+
+// Примечания:
+
+// - Будут использоваться только строчные буквы (az). Никакие знаки препинания и цифры не будут включены
+// - Необходимо учитывать производительность
+
+// Пример:
+// scramble('rkqodlw', 'world') ==> True
+// scramble('cedewaraaossoqqyt', 'codewars') ==> True
+// scramble('katas', 'steak') ==> False
+
+// function scramble(str1, str2) {
+//   const str1Arr = str1.split('');
+//   const str2Arr = str2.split('');
+//   let summStr = [];
+//   for (let i = 0; i < str2Arr.length; i++) {
+//     for (let j = 0; j < str1Arr.length; j++) {
+//       if (str2Arr[i] === str1Arr[j]) {
+//         summStr.push(str2Arr[i]);
+//         break;
+//       }
+//     }
+//   }
+//   return summStr.sort().join('') === str2Arr.sort().join('');
+// }
+
+// console.log(scramble('katas', 'steak'));
+
+//                                    ****************************************
+
+// Удалить первый и последний символ
+
+// Это довольно просто. Ваша цель — создать функцию, которая удаляет первый и последний символы строки. Вам дан один параметр — исходная строка.
+// Вам не нужно беспокоиться о строках, содержащих менее двух символов.
+
+// Пример:
+// 'eloquent' ==> 'loquen'
+// 'country' ==> 'ountr'
+
+// function removeChar (str){
+//   if (str.length > 2) {
+//     const arrStr = str.split('');
+//     const [first, ...middle] = arrStr;
+//     const newStr = middle.slice(0, -1);
+//     return newStr.join('');
+//   }
+// }
+
+// console.log(removeChar('eloquent'));
+
+//                                    ****************************************
+
+// Подсчитайте символы в вашей строке
+// Основная идея заключается в подсчете всех встречающихся символов в строке
+// Что делать, если строка пуста? Тогда результатом должен быть пустой литерал объекта {}.
+
+// Пример:
+// '' ==> {}
+// 'a' ==> {'a': 1}
+// 'aba' ==>  {'a': 2, 'b': 1}
+// 'ABC' ==>  {'A': 1, 'B': 1, 'C': 1}
+
+// function count(string) {
+//   let countOfSymbols = string.split('').reduce((acc, elem) => {
+//     if (elem in acc) {
+//       acc[elem]++
+//     } else {
+//       acc[elem] = 1;
+//     }
+//     return acc;
+//   }, {});
+//   return countOfSymbols;
+// };
+
+// console.log(count(''));
+
+//                                    ****************************************
+
+// Ваша задача состоит в том, чтобы сделать функцию,
+// которая может взять любое неотрицательное целое
+// в качестве аргумента и вернуть его с его цифрами
+// в порядке убывания.
+// По существу, перестроить цифры, чтобы создать
+// максимально возможное число.
+// Пример:
+// Input: 42145 Output: 54421
+// Input: 145263 Output: 654321
+// Input: 123456789 Output: 987654321
+
+// function descendingOrder (n){
+//   const sortN = (n.toString().split('').sort((a, b) => b - a)).join('');
+//   return sortN;
+// };
+
+// console.log(descendingOrder(42145));
+
+//                                    ****************************************
+
+// Return a new array with the strings filtered out
+// В этой kata вы создадите функцию, которая берёт список
+// неотрицательных целых чисел и строк и возвращает новый
+// список с отфильтрованными строками.
+// Пример:
+// filter_list([1, 2, 'a', 'b']) == [1, 2]
+// filter_list([1, 'a', 'b', 0, 15]) == [1, 0, 15]
+// filter_list([1, 2, 'aasf', '1', '123', 123]) == [1, 2, 123]
+
+// function filter_list(l) {
+//   let new_list = [];
+//   for (let i = 0; i < l.length; i++) {
+//     if (typeof l[i] === 'number') {
+//       new_list.push(l[i]);
+//     };
+//   };
+//   return new_list;
+// };
+
+// console.log(filter_list([1, 'a', 'b', 0, 15]));
+
+//                                    ****************************************
+
+// your code here
+// Если задан ввод массива цифр, верните массив с каждой
+// цифрой, инкрементированной по ее положению в массиве:
+// первая цифра будет увеличена на 1, вторая - на 2 и т.д.
+// Убедитесь, что начали подсчет позиций с 1 ( а не 0 ).
+// Результат может содержать только однозначные числа, так что если добавление цифры с её позицией дает вам многозначное число, то должна быть возвращена только последняя цифра.
+// (массивы будут содержать только числа)
+
+// Пример:
+// [1, 2, 4]  -->  [2, 4, 7]
+// #[1+1, 2+2, 4+3]
+
+// [4, 6, 9, 1, 3]  -->  [5, 8, 2, 5, 8]
+// # [4+1, 6+2, 9+3, 1+4, 3+5]
+// # 9+3 = 12  -->  2
+
+// function incrementer(nums) {
+//   let resArray = nums.map((el, index) => {
+//     if (String(el + (index + 1).length > 1)) {
+//       return (+String(el + (index + 1))[0]);
+//     } else return el + (index + 1);
+//   });
+//   return resArray;
+// }
+
+// console.log(incrementer([4, 6, 9, 1, 3]));
+
+//                                    ****************************************
+
+// your code here
+// В этой задаче вы получаете начальный и конечный номер
+// региона и должны возвращать количество всех чисел,
+// кроме чисел с 5 в нем. Начало и конец номера включены!
+// Результат может содержать пятерки. ;-)
+// Начальное число всегда будет меньше конечного числа. Оба числа также могут быть отрицательными!
+
+// Пример:
+// 1,9 -> 1,2,3,4,6,7,8,9 -> Result 8
+// 4,17 -> 4,6,7,8,9,10,11,12,13,14,16,17 -> Result 12
+
+function dontGiveMeFive(start, end) {
+
+}
