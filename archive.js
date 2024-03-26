@@ -4219,3 +4219,36 @@
 // console.log(dontGiveMeFive(1, 9));
 
 //                                    ****************************************
+
+// Вам будет дан номер, и вам нужно будет вернуть его в виде строки в расширенной форме
+// Все числа будут целыми числами больше 0
+
+// Пример: 
+// expandedForm(12); //  '10 + 2'
+// expandedForm(42); //  '40 + 2'
+// expandedForm(70304); //  '70000 + 300 + 4'
+
+function expandedForm(num) {
+  let restArr = num.toString().split('');
+  let newStr = [];
+  sub = 1;
+  while (restArr.length > 0) {
+    let end = restArr.pop();
+    if (end !== '0') {
+      newStr.unshift(end * sub);
+    }
+    sub *= 10;
+  }
+  return newStr.join(' + ');
+}
+
+console.log(expandedForm(42));
+
+//                                    ****************************************
+
+// Напишите функцию isUnique(str), которая принимает строку и возвращает true, если все символы в строке являются уникальными (не повторяются),
+// и false в противном случае. При проверке на уникальность не учитывайте пробелы.
+
+function isUnique(str) {
+
+}

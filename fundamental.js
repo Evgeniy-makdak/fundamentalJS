@@ -316,23 +316,23 @@ Math. abs (-5); // Выведет 5
 
 // Копирование массива
 const arr1 = [1, 2, 3];
-    const arr2 = [...arr1];
-    console.log(arr2); // [1, 2, 3];
-    // Распаковка элементов массива
-    const arr3 = [1, 2, 3];
-    const arr4 = [...arr3, 4, 51];
-    console.log(arr4); // [1, 2, 3, 4, 5];
-    // Объединение объектов:
-    const obj1 = { a: 1, b: 2 };
-    const obj6 = { c: 3, ...obj1 };
-    console.log(obj6); // { c: 3, a: 1, b: 2 };
-    // Передача аргументов в фукнцию
-    function sum(a, b, c) {
-    console.log(a); // 1
-    console.log(b); // 2
-    console.log(c); // 3
-    return a + b + c;
-    }
-    const numbers = [1, 2, 3];
-    const result1 = sum(... numbers) ;
-    console.log(result); // 6
+const arr2 = [...arr1];
+console.log(arr2); // [1, 2, 3];
+// Распаковка элементов массива
+const arr3 = [1, 2, 3];
+const arr4 = [...arr3, 4, 5];
+console.log(arr4); // [1, 2, 3, 4, 5];
+// Объединение объектов:
+const obj1 = { a: 1, b: 2 };
+const obj6 = { c: 3, ...obj1 };
+console.log(obj6); // { c: 3, a: 1, b: 2 };
+// Передача аргументов в фукнцию
+function sum(a, b, c) {
+  console.log(a); // 1
+  console.log(b); // 2
+  console.log(c); // 3
+  return a + b + c;
+}
+const numbers = [1, 2, 3];
+const resultSpread = sum(...numbers) ;
+console.log(resultSpread); // 6

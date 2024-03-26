@@ -616,5 +616,18 @@
 // if (typeof(a) == 'number') console.log('why?');   // в данном случае a остаётся number, так как метод toString() просто возвращает значение
 // // с типом строка, а сама переменная остаётся числом, как и объявлена вначале
 
-const str = 375;
-console.log(str.toString().length);
+function expandedForm(num) {
+  let restArr = num.toString().split('');
+  let newStr = [];
+  sub = 1;
+  while (restArr.length > 0) {
+    let end = restArr.pop();
+    if (end !== '0') {
+      newStr.unshift(end * sub);
+    }
+    sub *= 10;
+  }
+  return newStr.join(' + ');
+}
+
+console.log(expandedForm(735));
