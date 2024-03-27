@@ -4210,7 +4210,7 @@
 //       num = num.toString().split('').reduce((acc, el) => {
 //         return acc + parseInt(el);
 //       }, 0);
-//     } 
+//     }
 //     resultCount.push(num);
 //   }
 //   return `Result ${resultCount.length + 1}`;
@@ -4223,7 +4223,7 @@
 // Вам будет дан номер, и вам нужно будет вернуть его в виде строки в расширенной форме
 // Все числа будут целыми числами больше 0
 
-// Пример: 
+// Пример:
 // expandedForm(12); //  '10 + 2'
 // expandedForm(42); //  '40 + 2'
 // expandedForm(70304); //  '70000 + 300 + 4'
@@ -4249,25 +4249,33 @@
 // Напишите функцию isUnique(str), которая принимает строку и возвращает true, если все символы в строке являются уникальными (не повторяются),
 // и false в противном случае. При проверке на уникальность не учитывайте пробелы.
 
-function isUnique(str) {
-  const unicStr = [...new Set(str.split(''))];
-  if (unicStr.join('') === str) {
-    return true;
-  } else {
-    return false;
-  };
-};
+// function isUnique(str) {
+//   const unicStr = [...new Set(str.split(''))];
+//   if (unicStr.join('') === str) {
+//     return true;
+//   } else {
+//     return false;
+//   };
+// };
 
-console.log(isUnique('bulkam'));
+// console.log(isUnique('bulkam'));
 
 //                                    ****************************************
 
 // Вам дан массив целых чисел нечетной длины , в котором все они одинаковы, за исключением одного единственного числа.
-// Завершите метод, который принимает такой массив и возвращает это единственное другое число
-// Пример: 
+// Реализуйте метод, который принимает такой массив и возвращает это единственное другое число
+// Пример:
 // [1, 1, 2] ==> 2
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
 
-function stray (numbers) {
-
+function stray(numbers) {
+  const unicNumber = numbers.reduce((acc, el) => {
+    if (el in acc) acc[el]++;
+    else acc[el] = 1;
+    return acc;
+  }, {});
+  return Object.keys(unicNumber).find((key) => unicNumber[key] === 1);
 }
+console.log(stray([17, 17, 3, 17, 17, 17, 17]));
+
+//                                    ****************************************
