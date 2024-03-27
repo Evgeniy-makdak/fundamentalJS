@@ -4228,21 +4228,21 @@
 // expandedForm(42); //  '40 + 2'
 // expandedForm(70304); //  '70000 + 300 + 4'
 
-function expandedForm(num) {
-  let restArr = num.toString().split('');
-  let newStr = [];
-  sub = 1;
-  while (restArr.length > 0) {
-    let end = restArr.pop();
-    if (end !== '0') {
-      newStr.unshift(end * sub);
-    }
-    sub *= 10;
-  }
-  return newStr.join(' + ');
-}
+// function expandedForm(num) {
+//   let restArr = num.toString().split('');
+//   let newStr = [];
+//   sub = 1;
+//   while (restArr.length > 0) {
+//     let end = restArr.pop();
+//     if (end !== '0') {
+//       newStr.unshift(end * sub);
+//     }
+//     sub *= 10;
+//   }
+//   return newStr.join(' + ');
+// }
 
-console.log(expandedForm(42));
+// console.log(expandedForm(42));
 
 //                                    ****************************************
 
@@ -4250,5 +4250,24 @@ console.log(expandedForm(42));
 // и false в противном случае. При проверке на уникальность не учитывайте пробелы.
 
 function isUnique(str) {
+  const unicStr = [...new Set(str.split(''))];
+  if (unicStr.join('') === str) {
+    return true;
+  } else {
+    return false;
+  };
+};
+
+console.log(isUnique('bulkam'));
+
+//                                    ****************************************
+
+// Вам дан массив целых чисел нечетной длины , в котором все они одинаковы, за исключением одного единственного числа.
+// Завершите метод, который принимает такой массив и возвращает это единственное другое число
+// Пример: 
+// [1, 1, 2] ==> 2
+// [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function stray (numbers) {
 
 }
