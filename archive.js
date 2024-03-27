@@ -3617,14 +3617,17 @@
 // Дан текст. Найдите все места с двумя одинаковыми словами подряд и удалите лишние слова.
 
 function superfluousWord(text) {
-  let correctText = [];
+  // let correctText = [];
+  // const arrowText = text.split(' ');
+  // for (let i = 0; i < arrowText.length; i++) {
+  //   if (arrowText[i] !== arrowText[i + 1]) {
+  //     correctText.push(arrowText[i]);
+  //   };
+  // };
+  // return correctText.join(' ');
   const arrowText = text.split(' ');
-  for (let i = 0; i < arrowText.length; i++) {
-    if (arrowText[i] !== arrowText[i + 1]) {
-      correctText.push(arrowText[i]);
-    };
-  };
-  return correctText.join(' ');
+  let correctText = [...new Set(arrowText)].join(' ');
+  return correctText;
 };
 
 console.log(superfluousWord('Go Go to the world, and peace peace'));
