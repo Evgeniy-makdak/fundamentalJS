@@ -3612,6 +3612,23 @@
 //     <script src="./archive.js"></script>
 //   </body>
 
+// Задача 78
+// Удаление лишних слов
+// Дан текст. Найдите все места с двумя одинаковыми словами подряд и удалите лишние слова.
+
+function superfluousWord(text) {
+  let correctText = [];
+  const arrowText = text.split(' ');
+  for (let i = 0; i < arrowText.length; i++) {
+    if (arrowText[i] !== arrowText[i + 1]) {
+      correctText.push(arrowText[i]);
+    };
+  };
+  return correctText.join(' ');
+};
+
+console.log(superfluousWord('Go Go to the world, and peace peace'));
+
 //                                    ****************************************
 //                                    ****************************************
 //                                    ****************************************
@@ -4268,14 +4285,14 @@
 // [1, 1, 2] ==> 2
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
 
-function stray(numbers) {
-  const unicNumber = numbers.reduce((acc, el) => {
-    if (el in acc) acc[el]++;
-    else acc[el] = 1;
-    return acc;
-  }, {});
-  return Object.keys(unicNumber).find((key) => unicNumber[key] === 1);
-}
-console.log(stray([17, 17, 3, 17, 17, 17, 17]));
+// function stray(numbers) {
+//   const unicNumber = numbers.reduce((acc, el) => {
+//     if (el in acc) acc[el]++;
+//     else acc[el] = 1;
+//     return acc;
+//   }, {});
+//   return Object.keys(unicNumber).find((key) => unicNumber[key] === 1);
+// }
+// console.log(stray([17, 17, 3, 17, 17, 17, 17]));
 
 //                                    ****************************************
