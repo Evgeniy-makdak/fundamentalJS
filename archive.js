@@ -3616,21 +3616,22 @@
 // Удаление лишних слов
 // Дан текст. Найдите все места с двумя одинаковыми словами подряд и удалите лишние слова.
 
-function superfluousWord(text) {
-  // let correctText = [];
-  // const arrowText = text.split(' ');
-  // for (let i = 0; i < arrowText.length; i++) {
-  //   if (arrowText[i] !== arrowText[i + 1]) {
-  //     correctText.push(arrowText[i]);
-  //   };
-  // };
-  // return correctText.join(' ');
-  const arrowText = text.split(' ');
-  let correctText = [...new Set(arrowText)].join(' ');
-  return correctText;
-};
+// function superfluousWord(text) {
+// let correctText = [];
+// const arrowText = text.split(' ');
+// for (let i = 0; i < arrowText.length; i++) {
+//   if (arrowText[i] !== arrowText[i + 1]) {
+//     correctText.push(arrowText[i]);
+//   };
+// };
+// return correctText.join(' ');
+//-------------------- variant 2 ---------------------
+//   const arrowText = text.split(' ');
+//   let correctText = [...new Set(arrowText)].join(' ');
+//   return correctText;
+// };
 
-console.log(superfluousWord('Go Go to the world, and peace peace'));
+// console.log(superfluousWord('Go Go to the world, and peace peace'));
 
 //                                    ****************************************
 //                                    ****************************************
@@ -4299,3 +4300,78 @@ console.log(superfluousWord('Go Go to the world, and peace peace'));
 // console.log(stray([17, 17, 3, 17, 17, 17, 17]));
 
 //                                    ****************************************
+
+// Напишите функцию, которая подсчитывает, сколькими различными способами вы можете разменять определенную сумму денег, учитывая массив
+// номиналов монет. Например, есть 3 способа сдачи на 4, если у вас есть монеты номиналом 1 и 2:
+// 1+1+1+1, 1+1+2, 2+2.
+// Порядок монет не имеет значения:
+// 1+1+2 == 2+1+1
+// Также предположим, что у вас бесконечное количество монет.
+// Ваша функция должна принимать сумму для изменения и массив уникальных номиналов монет
+// Пример:
+// countChange(4, [1,2]) // => 3
+// countChange(10, [5,2,3]) // => 4
+// countChange(11, [5,7]) //  => 0
+
+// function countChange(money, coins) {
+//   // Функция для рекурсивного подсчета комбинаций монет
+//   function countCombinations(target, index) {
+//     // Базовый случай: если сумма равна 0, значит, мы нашли комбинацию
+//     if (target === 0) {
+//       counter++;
+//       return;
+//     }
+
+//     // Рекурсивно перебираем монеты, начиная с индекса index
+//     for (let i = index; i < coins.length; i++) {
+//       // Если текущий номинал монеты меньше или равен оставшейся сумме,
+//       // мы можем включить эту монету в комбинацию
+//       if (coins[i] <= target) {
+//         countCombinations(target - coins[i], i);
+//       }
+//     }
+//   }
+
+//   let counter = 0;
+//   // Сортируем массив монет по убыванию
+//   coins.sort((a, b) => b - a);
+//   // Вызываем функцию для подсчета комбинаций
+//   countCombinations(money, 0);
+//   return counter;
+// }
+
+// console.log(countChange(10, [5, 2, 3])); // Должно вывести 4 (комбинации: [5,5], [5,2,3], [3,3,2,2], [2,2,2,2,2])
+
+// function countChange(money, coins) {
+//   let counter = 0;
+
+//   // Функция для рекурсивного подсчета комбинаций монет
+//   function countCombinations(target, index, currentCombination) {
+//     // Если цель достигнута, увеличиваем счетчик и выходим из функции
+//     if (target === 0) {
+//       counter++;
+//       return;
+//     }
+
+//     // Если мы вышли за пределы массива монет или текущая монета больше цели, прекращаем рекурсию
+//     if (index >= coins.length || target < 0) {
+//       return;
+//     }
+
+//     // Добавляем текущую монету к текущей комбинации и рекурсивно ищем комбинации с оставшейся суммой
+//     countCombinations(target - coins[index], index, [
+//       ...currentCombination,
+//       coins[index],
+//     ]);
+
+//     // Пробуем следующую монету, увеличивая индекс
+//     countCombinations(target, index + 1, [...currentCombination]);
+//   }
+
+//   // Начинаем подсчет с суммы money и индекса 0
+//   countCombinations(money, 0, []);
+
+//   return counter;
+// }
+
+// console.log(countChange(10, [5, 2, 3])); // Должно вывести 4
