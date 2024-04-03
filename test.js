@@ -615,6 +615,12 @@
 // a.toString();
 // if (typeof(a) == 'number') console.log('why?');   // в данном случае a остаётся number, так как метод toString() просто возвращает значение
 // // с типом строка, а сама переменная остаётся числом, как и объявлена вначале
-const testCoins = [7, 5, 1]
-let cash = testCoins.reduce((acc, el) => acc + el);
-console.log(cash);
+const n = 793;
+let counter = 0;
+const summArr = n.toString().split('');
+summArr.map((el) => {
+    if (el === '9') {
+        counter++;
+    };
+});
+console.log(summArr, counter);
