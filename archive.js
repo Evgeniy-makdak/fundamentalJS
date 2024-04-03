@@ -4430,3 +4430,32 @@
 // }
 
 // console.log(findUniq([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ]));
+
+//                                    ****************************************
+
+// Напишите функцию, которая удаляет все восклицательные знаки из заданной строки
+
+// Пример: 
+// removeExclamationMarks("Hello World!")  // => "Hello World"
+
+// function removeExclamationMarks (s) {
+//   let newString = s.replaceAll('e', '');
+//   return newString;
+// };
+
+// console.log(removeExclamationMarks('Frontend example'));
+
+//                                    ****************************************
+
+
+// Учитывая массив единиц и нулей, преобразуйте эквивалентное двоичное значение в целое число
+// Однако массивы могут иметь разную длину, а не ограничиваться только 4
+
+// Пример: 
+// [0, 0, 0, 1] ==> 1
+// [0, 0, 1, 0] ==> 2
+// [0, 1, 0, 1] ==> 5
+
+const binaryArrayToNumber = arr => {
+
+}
