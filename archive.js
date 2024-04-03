@@ -4375,3 +4375,58 @@
 // }
 
 // console.log(countChange(10, [5, 2, 3])); // Должно вывести 4
+
+// function countChange(money, coins) {
+//   const startCoins = coins.sort((a, b) => b - a);
+//   let counter = 0;
+
+//   function findCombination(index, remainingMoney) {
+//     if (remainingMoney === 0) {
+//       counter++;
+//       return;
+//     }
+//     if (remainingMoney < 0 || index === coins.length) {
+//       return;
+//     }
+//     for (let i = index; i < coins.length; i++) {
+//       findCombination(i, remainingMoney - coins[i]);
+//     }
+//   }
+//   findCombination(0, money);
+//   return counter;
+// }
+
+// console.log(countChange(10, [5, 2, 3])); 
+
+//                                    ****************************************
+
+// Есть массив строк. Все строки содержат одинаковые буквы, кроме одной. Попробуйте найти его!
+
+// Пример: 
+// findUniq([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ])  //  => 'BbBb'
+// findUniq([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ])  //  => 'foo'
+
+// Строки могут содержать пробелы. Пробелы не имеют значения, имеют значение только символы, не являющиеся пробелами. 
+// Например, строка, содержащая только пробелы, аналогична пустой строке
+// Гарантируется, что массив содержит более двух строк
+
+// function findUniq(arr) {
+//   let baseStr = arr[0];
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i].length < baseStr.length) {
+//       baseStr = arr[i];
+//     }
+//   }
+
+//   let uniqueStr = '';
+//   for (let j = 0; j < arr.length; j++) {
+//     if (arr[j].localeCompare(baseStr, undefined, { sensitivity: 'base' }) !== 0) {
+//       uniqueStr = arr[j];
+//       break;
+//     }
+//   }
+
+//   return uniqueStr;
+// }
+
+// console.log(findUniq([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ]));
