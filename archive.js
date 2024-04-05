@@ -4555,17 +4555,17 @@ function removeParentheses (s) {
 // Самое частое число в массиве это -1, оно встречается 5 раз.
 // #7kyu
 
-function mostFrequentItemCount(collection) {
-  let mostFrequentItem = collection.reduce((acc, el) => {
-    if (el in acc) 
-      acc[el]++;
-      else acc[el] = 1;
-      return acc;
-  }, {});
-  return (Object.entries(mostFrequentItem).sort((a, b) => b[1] - a[1])[0])[1];
-};
+// function mostFrequentItemCount(collection) {
+//   let mostFrequentItem = collection.reduce((acc, el) => {
+//     if (el in acc) 
+//       acc[el]++;
+//       else acc[el] = 1;
+//       return acc;
+//   }, {});
+//   return (Object.entries(mostFrequentItem).sort((a, b) => b[1] - a[1])[0])[1];
+// };
 
-console.log(mostFrequentItemCount([3, -1, -1, -1, 2, -1, 3, -1, 2, 9, 3]));
+// console.log(mostFrequentItemCount([3, -1, -1, -1, 2, -1, 3, -1, 2, 9, 3]));
 
 //                                    ****************************************
 
@@ -4580,9 +4580,14 @@ console.log(mostFrequentItemCount([3, -1, -1, -1, 2, -1, 3, -1, 2, 9, 3]));
 // highAndLow("1 9 3 4 -5"); // return "9 -5"
 // #7kyu
 
-function highAndLow( numbers) {
+function highAndLow(numbers) {
+  let resNumbers = ''
+  let arrNumbers = numbers.split(' ').sort((a, b) => b - a);
+  resNumbers = `"${arrNumbers[0]} ${(arrNumbers[arrNumbers.length - 1])}"`;
+  return resNumbers
+};
 
-}
+console.log(highAndLow("1 2 -3 4 5"));
 
 //                                    ****************************************
 
