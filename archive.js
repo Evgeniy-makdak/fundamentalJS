@@ -4488,22 +4488,22 @@
 // solution(["engine", "endure", "elite"]) => true
 // 6kyu
 
-function solution(words) {
-  let counter = 0;
-  for (let i = 0; i < words.length - 1; i++) {
-    if (words[i][words[i].length - 1] === words[i + 1][0]) {
-      counter++;
-    }
-  }
+// function solution(words) {
+//   let counter = 0;
+//   for (let i = 0; i < words.length - 1; i++) {
+//     if (words[i][words[i].length - 1] === words[i + 1][0]) {
+//       counter++;
+//     }
+//   }
   
-  if (counter === words.length - 1) {
-    return true;
-  } else {
-    return false;
-  }
-}
+//   if (counter === words.length - 1) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
-console.log(solution(["engine", "endure", "elite"]));
+// console.log(solution(["engine", "endure", "elite"]));
 
 //                                    ****************************************
 
@@ -4531,9 +4531,18 @@ function removeParentheses (s) {
 // findShort("Let's travel abroad shall we") => 2
 // #7kyu
 
-function findShort(s) {
+// function findShort(s) {
+//   const arrStr = s.split(' ');
+//   let shortStr = arrStr[0]; 
+//   for (let i = 1; i < arrStr.length; i++) {
+//     if (arrStr[i].length < shortStr.length) {
+//       shortStr = arrStr[i];
+//     }
+//   }
+//   return shortStr.length;
+// }
 
-}
+// console.log(findShort("Let's travel abroad shall we")); 
 
 //                                    ****************************************
 
@@ -4583,4 +4592,24 @@ function digitalRoot(n) {
 }
 
 //                                    ****************************************
+
+// Давайте представим, что ваша компания только что наняла вашего друга из колледжа и выплатила вам реферальный бонус. 
+// Чтобы отпраздновать это событие, вы ведете свою команду в бар по соседству и используете реферальный бонус, чтобы купить и построить самую 
+// большую трехмерную пирамиду из пивных банок, какую только сможете
+// Пирамида пивных банок возводит в квадрат количество банок на каждом уровне: 1 банка на верхнем уровне, 4 на втором, 9 на 
+// следующем, 16, 25...
+// Завершите функцию beeramid, чтобы получить количество полных уровней пирамиды из пивных банок, которую вы можете построить, 
+// учитывая параметры: ваш реферальный бонус и цена банки пива
+
+// Пример: 
+// beeramid(1500, 2); // should === 12
+// beeramid(5000, 3); // should === 16
+// #5kyu
+
+function beeramid (bonus, price) {
+
+}
+
+//                                    ****************************************
+
 //      02.12.2022
