@@ -4556,8 +4556,16 @@ function removeParentheses (s) {
 // #7kyu
 
 function mostFrequentItemCount(collection) {
+  let mostFrequentItem = collection.reduce((acc, el) => {
+    if (el in acc) 
+      acc[el]++;
+      else acc[el] = 1;
+      return acc;
+  }, {});
+  return (Object.entries(mostFrequentItem).sort((a, b) => b[1] - a[1])[0])[1];
+};
 
-}
+console.log(mostFrequentItemCount([3, -1, -1, -1, 2, -1, 3, -1, 2, 9, 3]));
 
 //                                    ****************************************
 
