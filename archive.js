@@ -4580,14 +4580,14 @@ function removeParentheses (s) {
 // highAndLow("1 9 3 4 -5"); // return "9 -5"
 // #7kyu
 
-function highAndLow(numbers) {
-  let resNumbers = ''
-  let arrNumbers = numbers.split(' ').sort((a, b) => b - a);
-  resNumbers = `"${arrNumbers[0]} ${(arrNumbers[arrNumbers.length - 1])}"`;
-  return resNumbers
-};
+// function highAndLow(numbers) {
+//   let resNumbers = ''
+//   let arrNumbers = numbers.split(' ').sort((a, b) => b - a);
+//   resNumbers = `"${arrNumbers[0]} ${(arrNumbers[arrNumbers.length - 1])}"`;
+//   return resNumbers
+// };
 
-console.log(highAndLow("1 2 -3 4 5"));
+// console.log(highAndLow("1 2 -3 4 5"));
 
 //                                    ****************************************
 
@@ -4601,8 +4601,17 @@ console.log(highAndLow("1 2 -3 4 5"));
 // #6kyu
 
 function digitalRoot(n) {
+  const arrDigitRoot = n.toString().split('');
+  let summElems = arrDigitRoot.reduce((acc, el) => {
+    return acc + +el;
+  }, 0);
+  if (summElems.toString().split('').length > 1) {
+    return digitalRoot(summElems);
+  };
+  return summElems;
+};
 
-}
+console.log(digitalRoot(942));
 
 //                                    ****************************************
 
