@@ -4626,7 +4626,18 @@ function removeParentheses(s) {}
 // beeramid(5000, 3); // should === 16
 // #5kyu
 
-function beeramid(bonus, price) {}
+function beeramid(bonus, price) {
+  let countOfBeer = 0;
+  let n = 1;
+  while (bonus >= (countOfBeer + n**2) * price) {
+    countOfBeer += n**2;
+    n++;
+  }
+  return n - 1; 
+}
+
+console.log(beeramid(1500, 2)); 
+console.log(beeramid(5000, 3)); 
 
 //                                    ****************************************
 
