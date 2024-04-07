@@ -4649,18 +4649,18 @@ function removeParentheses(s) {}
 // arrayDiff([1,2],[1]) == [2]
 // arrayDiff([1,2,2,2,3],[2]) == [1,3]
 // #6kyu
-function arrayDiff(a, b) {
-  let resArr = [];
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] != b) {
-      resArr.push(a[i]);
-    } 
-  }
-  return resArr;
-};
+// function arrayDiff(a, b) {
+//   let resArr = [];
+//   for (let i = 0; i < a.length; i++) {
+//     if (a[i] != b) {
+//       resArr.push(a[i]);
+//     } 
+//   }
+//   return resArr;
+// };
 
-console.log(arrayDiff([1,2],[1]));
-console.log(arrayDiff([1,2,2,2,3],[2]));
+// console.log(arrayDiff([1,2],[1]));
+// console.log(arrayDiff([1,2,2,2,3],[2]));
 
 //                                    ****************************************
 
