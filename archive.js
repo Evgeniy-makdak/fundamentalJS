@@ -4662,15 +4662,6 @@ function removeParentheses(s) {}
 // console.log(arrayDiff([1,2],[1]));
 // console.log(arrayDiff([1,2,2,2,3],[2]));
 
-//                                    ****************************************
-
-// Купон больше не действителен на следующий день после даты истечения срока действия.
-// Все даты будут передаваться как строки в этом формате: "MONTH DATE, YEAR".
-// Напишите функцию checkCoupon, которая проверяет,
-// что код купона действителен и не истек.
-// checkCoupon("123", "123", "July 9, 2015", "July 9, 2015")  ===  true
-// checkCoupon("123", "123", "July 9, 2015", "July 2, 2015")  ===  false
-function checkCoupon(a, b, c, d) {}
 
 //                                    ****************************************
 
@@ -4680,7 +4671,14 @@ function checkCoupon(a, b, c, d) {}
 // [] --> []
 // ["a", "b"] --> ["1: a", "2: b"]
 
-let number = function (array) {};
+let number = function (array) {
+  let resArray = array.map((el, index) => {
+    return (`${index + 1}: ${el}`)
+  });
+  return resArray;
+};
+
+console.log(number(["a", "b"]));
 
 //                                    ****************************************
 
