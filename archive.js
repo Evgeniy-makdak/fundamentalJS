@@ -4671,14 +4671,14 @@ function removeParentheses(s) {}
 // [] --> []
 // ["a", "b"] --> ["1: a", "2: b"]
 
-let number = function (array) {
-  let resArray = array.map((el, index) => {
-    return (`${index + 1}: ${el}`)
-  });
-  return resArray;
-};
+// let number = function (array) {
+//   let resArray = array.map((el, index) => {
+//     return (`${index + 1}: ${el}`)
+//   });
+//   return resArray;
+// };
 
-console.log(number(["a", "b"]));
+// console.log(number(["a", "b"]));
 
 //                                    ****************************************
 
