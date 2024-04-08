@@ -4691,7 +4691,14 @@ function removeParentheses(s) {}
 // "moOse" --> false
 // #7kyu
 
-function isIsogram(str) {}
+// function isIsogram(str) {
+//   const setStr = new Set(str.toLowerCase());
+//   if (Array.from(setStr).join('').length === str.toLowerCase().length) {
+//     return true;
+//   } else return false;
+// };
+
+// console.log(isIsogram("moOse"));
 
 //                                    ****************************************
 
