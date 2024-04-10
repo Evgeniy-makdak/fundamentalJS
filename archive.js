@@ -4708,12 +4708,12 @@ function removeParentheses(s) {}
 // ["Eyes", "Glasses", "Monocles", "Telescopes"]
 // #7kyu
 
-function sortByLength(array) {
-  let newArray = array.sort((a, b) => a.length - b.length)
-  return newArray;
-};
+// function sortByLength(array) {
+//   let newArray = array.sort((a, b) => a.length - b.length)
+//   return newArray;
+// };
 
-console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]));
+// console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]));
 
 //                                    ****************************************
 
@@ -4724,7 +4724,20 @@ console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]));
 // "Reverse siht string, !esaelp"
 // #6kyu
 
-function reverse(str) {}
+// function reverse(str) {
+//   let arrStr = str.split(' ');
+//   let reverseStr = [];
+//   for (let i = 0; i < arrStr.length; i++) {
+//     if (i % 2 != 0) {
+//       reverseStr.push(arrStr[i].trim().split('').reverse().join(''))
+//     } else {
+//       reverseStr.push(arrStr[i].trim())
+//     };
+//   };
+//   return reverseStr.join(' ');
+// };
+
+// console.log(reverse("Reverse this string, please!"));
 
 //                                    ****************************************
 
