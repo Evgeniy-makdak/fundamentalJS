@@ -4708,7 +4708,12 @@ function removeParentheses(s) {}
 // ["Eyes", "Glasses", "Monocles", "Telescopes"]
 // #7kyu
 
-function sortByLength(array) {}
+function sortByLength(array) {
+  let newArray = array.sort((a, b) => a.length - b.length)
+  return newArray;
+};
+
+console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]));
 
 //                                    ****************************************
 
@@ -4949,3 +4954,16 @@ function toUnderscore (string) {}
 
 //                                    ****************************************
 
+// Напишите функцию, которая принимает положительное целое число и возвращает следующее меньшее положительное целое число, содержащее те же цифры
+// Возврат -1, если не существует меньшего числа, содержащего те же цифры. Также верните -1, если следующее меньшее число с теми же цифрами 
+// потребует, чтобы первая цифра была равна нулю
+// Пример: 
+// nextSmaller(21) == 12
+// nextSmaller(531) == 513
+// nextSmaller(9) == -1
+// nextSmaller(1027) == -1
+// - Некоторые тесты будут включать очень большие числа
+// - В тестовых данных используются только положительные целые числа
+// #4kyu
+
+function nextSmaller(n) {}
