@@ -4980,3 +4980,24 @@ function toUnderscore (string) {}
 // #4kyu
 
 function nextSmaller(n) {}
+
+//                                    ****************************************
+
+// Учитывая строку, вы должны вернуть строку, в которой каждый символ (с учетом регистра) повторяется один раз
+// Пример: 
+// "String"      -> "SSttrriinngg"
+// "Hello World" -> "HHeelllloo  WWoorrlldd"
+// "1234!_ "     -> "11223344!!__  "
+// #8kyu
+
+// function doubleChar(str) {
+//   let arrStr = str.split('');
+//   let doubleStr = arrStr.map(element => {
+//     return (element + element);
+//   });
+//   return doubleStr.join('');
+// };
+
+// console.log(doubleChar("1234!_ "));
+
+//                                    ****************************************
