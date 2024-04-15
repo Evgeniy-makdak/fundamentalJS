@@ -4759,7 +4759,12 @@ function possibilities(str) {}
 // sortDict({1:2, 2:4, 3:6}) == [[3,6], [2,4], [1,2]]
 // #7kyu
 
-function sortDict(dict) {}
+function sortDict(dict) {
+  let sortArr = Object.entries(dict).sort((a, b) => b[1] - a[1]);
+  return sortArr;
+}
+
+console.log(sortDict({1:2, 2:4, 3:6}));
 
 //                                    ****************************************
 
