@@ -450,3 +450,20 @@ console.log(set.size); // 3
 for (let user of set) {
   console.log(user.name); // John, Pete, Mary
 }
+
+//                                    ****************************************
+//                                              Пример обращения к API:
+
+async function getWeather() {
+  const API_KEY = "12dd0fe5648f4507a47125430231301";
+  const country = prompt("Введите ваш город/страну:  ");
+  const URL = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${country}`;
+  try {
+    const response = await fetch(URL);
+    const data = await response.json();
+    alert(`Температура в ${country}: ${data.current.temp_c} °C`);
+  } catch (e) {
+    console.log(e);
+  }
+}
+getWeather();

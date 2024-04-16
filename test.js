@@ -615,7 +615,3 @@
 // a.toString();
 // if (typeof(a) == 'number') console.log('why?');   // в данном случае a остаётся number, так как метод toString() просто возвращает значение
 // // с типом строка, а сама переменная остаётся числом, как и объявлена вначале
-
-const str = "Dermatoglyphics";
-const setStr = (str.split(''));
-console.log(setStr);
