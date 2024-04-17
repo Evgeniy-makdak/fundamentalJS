@@ -4759,12 +4759,12 @@ function possibilities(str) {}
 // sortDict({1:2, 2:4, 3:6}) == [[3,6], [2,4], [1,2]]
 // #7kyu
 
-function sortDict(dict) {
-  let sortArr = Object.entries(dict).sort((a, b) => b[1] - a[1]);
-  return sortArr;
-}
+// function sortDict(dict) {
+//   let sortArr = Object.entries(dict).sort((a, b) => b[1] - a[1]);
+//   return sortArr;
+// }
 
-console.log(sortDict({1:2, 2:4, 3:6}));
+// console.log(sortDict({1:2, 2:4, 3:6}));
 
 //                                    ****************************************
 
@@ -4795,7 +4795,12 @@ function stringExpansion(s) {}
 // "Lets go" --> "L  E  T  S  G  O"
 // #7kyu
 
-function vaporcode(string) {}
+// function vaporcode(string) {
+//   const arrString = string.split(' ').join('').toUpperCase().split('').join('  ');
+//   return arrString;
+// };
+
+// console.log(vaporcode("Lets go"));
 
 //                                    ****************************************
 
@@ -5006,3 +5011,16 @@ function nextSmaller(n) {}
 // console.log(doubleChar("1234!_ "));
 
 //                                    ****************************************
+
+// В этом примере вам необходимо проверить, является ли строка ввода пользователя буквенно-цифровой
+// Строка имеет следующие условия, чтобы быть буквенно-цифровой:
+// - Хотя бы один символ ( ""недопустимо)
+// - Разрешенными символами являются прописные/строчные латинские буквы и цифры от 0до.9
+// - Никаких пробелов/подчеркивания
+// Пример: 
+// alphanumeric("Mazinkaiser")  //  true
+// alphanumeric("hello world_")  //  false
+// alphanumeric("PassW0rd")  //  true
+// alphanumeric("     ")  //  false
+// #5kyu
+function alphanumeric (string){}
