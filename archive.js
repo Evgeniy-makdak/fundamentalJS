@@ -4785,7 +4785,29 @@ function possibilities(str) {}
 // ""          -->  ""
 // #6kyu
 
-function stringExpansion(s) {}
+function stringExpansion(s) {
+  const arrS = [];
+  let i = 0;
+  
+  while (i < s.length) {
+    if (/\d/.test(s[i])) {
+      let n = "";
+      while (/\d/.test(s[i])) {
+        n += s[i];
+        i++;
+      }
+      const charToRepeat = s[i];
+      arrS.push(charToRepeat.repeat(+n));
+    } else {
+      arrS.push(s[i]);
+    }
+    i++;
+  }
+  
+  return arrS.join("");
+}
+
+console.log(stringExpansion("3D2a5d2f"));
 
 //                                    ****************************************
 
