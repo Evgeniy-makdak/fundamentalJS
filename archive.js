@@ -4785,29 +4785,29 @@ function possibilities(str) {}
 // ""          -->  ""
 // #6kyu
 
-function stringExpansion(s) {
-  const arrS = [];
-  let i = 0;
+// function stringExpansion(s) {
+//   const arrS = [];
+//   let i = 0;
   
-  while (i < s.length) {
-    if (/\d/.test(s[i])) {
-      let n = "";
-      while (/\d/.test(s[i])) {
-        n += s[i];
-        i++;
-      }
-      const charToRepeat = s[i];
-      arrS.push(charToRepeat.repeat(+n));
-    } else {
-      arrS.push(s[i]);
-    }
-    i++;
-  }
+//   while (i < s.length) {
+//     if (/\d/.test(s[i])) {
+//       let n = "";
+//       while (/\d/.test(s[i])) {
+//         n += s[i];
+//         i++;
+//       }
+//       const charToRepeat = s[i];
+//       arrS.push(charToRepeat.repeat(+n));
+//     } else {
+//       arrS.push(s[i]);
+//     }
+//     i++;
+//   }
   
-  return arrS.join("");
-}
+//   return arrS.join("");
+// }
 
-console.log(stringExpansion("3D2a5d2f"));
+// console.log(stringExpansion("3D2a5d2f"));
 
 //                                    ****************************************
 
@@ -4850,7 +4850,14 @@ Array. prototype.sameStructureAs = function (other) {}
 // Примечание: функция принимает целое число и возвращает целое число.
 // #7kyu
 
-function squareDigits(num) {}
+function squareDigits(num) {
+  const arrNum = num.toString().split('').map((el) => {
+    return Math.pow(el, 2);
+  })
+  return arrNum.join('');
+};
+
+console.log(squareDigits(9119));
 
 //                                    ****************************************
 
