@@ -4883,21 +4883,21 @@ function validParentheses(parens) {}
 // ('/', 49, 7) --> 7
 // #8kyu
 
-function basicOp(operation, value1, value2) {
-  let res = 0;
-  if (operation === '+') {
-    res = value1 + value2;
-  } else if (operation === '-') {
-    res = value1 - value2;
-  } else if (operation === '*') {
-    res = value1 * value2;
-  }  else if (operation === '/') {
-    res = value1 / value2;
-  };
-  return res;
-}
+// function basicOp(operation, value1, value2) {
+//   let res = 0;
+//   if (operation === '+') {
+//     res = value1 + value2;
+//   } else if (operation === '-') {
+//     res = value1 - value2;
+//   } else if (operation === '*') {
+//     res = value1 * value2;
+//   }  else if (operation === '/') {
+//     res = value1 / value2;
+//   };
+//   return res;
+// }
 
-console.log(basicOp('/', 49, 7));
+// console.log(basicOp('/', 49, 7));
 
 //                                    ****************************************
 
@@ -4908,7 +4908,15 @@ console.log(basicOp('/', 49, 7));
 // Если a и b имеют одинаковую длину, рассматривайте a как более длинное b+reverse(a)+b
 // #7kyu
 
-function shorter_reverse_longer(a, b) {}
+// function shorter_reverse_longer(a, b) {
+//   if (a.length < b.length) {
+//     return `${a} ${ b.split('').reverse().join('')} ${ a}`;
+//   } else {
+//     return `${b} ${ a.split('').reverse().join('')} ${ b}`;
+//   };
+// };
+
+// console.log(shorter_reverse_longer('short', 'longer'));
 
 //                                    ****************************************
 
