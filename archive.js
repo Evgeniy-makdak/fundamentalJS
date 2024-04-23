@@ -4930,7 +4930,21 @@ function validParentheses(parens) {}
 // 4 --> 0
 // #6kyu
 
-function persistence(num) {}
+// function persistence(num) {
+//   let count = 0;
+//   let arrNum = num
+//     .toString()
+//     .split('')
+//     .reduce((acc, el) => {
+//       return acc * el;
+//     });
+//   if (arrNum.toString().split('').length > 1) {
+//     count++;
+//     return count + persistence(arrNum);
+//   } else return count + 1;
+// };
+
+// console.log(persistence(3));
 
 //                                    ****************************************
 

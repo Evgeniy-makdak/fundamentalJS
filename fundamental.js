@@ -244,7 +244,7 @@ myElement.style.fontSize = '16px';
 // Добавление класса к элементу
 myElement.classList.add('newClass');
 // Удаление класса из элемента
-myElement. classList.remove('oldClass');
+myElement.classList.remove('oldClass');
 // Проверка наличия класса у элемента
 let hasClass = myElement.classList.contains('checkClass');
 // Обработка события клика на элементе
