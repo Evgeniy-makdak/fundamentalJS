@@ -617,12 +617,14 @@
 // // с типом строка, а сама переменная остаётся числом, как и объявлена вначале
 
 obj = {
-    name: 'Name',
-    skills: {
-      hard: ['js', 'python'],
-      soft: ['agile']
-    }
+    a: 1,
+    b: 7,
+    c: 3,
+    d: 85,
+    e: -11,
+    f: -253,
+    j: 127
   };
-  let objJson = JSON.parse(JSON.stringify(obj));
 
-  console.log(objJson.skills.hard);
+const sortValues = Object.entries(obj).sort((a, b) => a[1] - b[1]);  
+console.log(sortValues);

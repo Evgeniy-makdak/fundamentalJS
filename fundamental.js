@@ -112,8 +112,28 @@ console.log(descriptor); // Выведет { value: 1, writable: true, enumerabl
 const obj8 = { a: 1, b: 2};
 console.log(obj8.hasOwnProperty('a')); // Выведет true
 console.log(obj8.hasOwnProperty('c')); // Выведет false
+//----------
+obj = {
+  a: 1,
+  b: 7,
+  c: 3,
+  d: 85,
+  e: -11,
+  f: -253,
+  j: 127
+};
 
-
+const sortValues = Object.entries(obj).sort((a, b) => a[1] - b[1]);  
+console.log(sortValues); // выведет:
+[
+  [ 'f', -253 ],
+  [ 'e', -11 ],
+  [ 'a', 1 ],
+  [ 'c', 3 ],
+  [ 'b', 7 ],
+  [ 'd', 85 ],
+  [ 'j', 127 ]
+]
 //                                    ****************************************
 //                                              ФУНКЦИИ ОБРАБОТЧИКОВ СОБЫТИЙ:
 
