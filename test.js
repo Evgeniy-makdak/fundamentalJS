@@ -617,6 +617,12 @@
 // // с типом строка, а сама переменная остаётся числом, как и объявлена вначале
 
 
-const myGroup = Object.groupBy(array, ({ value }) => {
-    return value;
-   });
+// const myGroup = Object.groupBy(array, ({ value }) => {
+//     return value;
+//    });
+
+   const nums = [1, 2, 3, 4]
+   const newNums = nums.with(1, 'string')
+   
+   console.log(newNums);
+   console.log(nums);
