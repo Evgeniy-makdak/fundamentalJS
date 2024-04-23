@@ -616,13 +616,13 @@
 // if (typeof(a) == 'number') console.log('why?');   // в данном случае a остаётся number, так как метод toString() просто возвращает значение
 // // с типом строка, а сама переменная остаётся числом, как и объявлена вначале
 
+obj = {
+    name: 'Name',
+    skills: {
+      hard: ['js', 'python'],
+      soft: ['agile']
+    }
+  };
+  let objJson = JSON.parse(JSON.stringify(obj));
 
-// const myGroup = Object.groupBy(array, ({ value }) => {
-//     return value;
-//    });
-
-   const nums = [1, 2, 3, 4]
-   const newNums = nums.with(1, 'string')
-   
-   console.log(newNums);
-   console.log(nums);
+  console.log(objJson.skills.hard);
