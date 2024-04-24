@@ -4955,7 +4955,12 @@ function validParentheses(parens) {}
 // "The_Stealth_Warrior" => "TheStealthWarrior"
 // #6kyu
 
-function toCamelCase(str) {}
+// function toCamelCase(str) {
+//   const arrStr = str.split(/_|-/);
+//   return arrStr.join('');
+// }
+
+// console.log(toCamelCase("The_Stealth-Warrior"));
 
 //                                    ****************************************
 
@@ -4967,7 +4972,16 @@ function toCamelCase(str) {}
 // sumStrings("11", "99") // => "110"
 // #4kyu
 
-function sumStrings(a, b) {}
+function sumStrings(a, b) {
+  const arrNumb = [+a, +b];
+  let resSumString = arrNumb.reduce((acc, el) => {
+    return acc + el;
+  });
+  return resSumString.toString();
+};
+
+console.log(sumStrings("11", "99"));
+console.log(typeof(sumStrings("11", "99")));
 
 //                                    ****************************************
 
