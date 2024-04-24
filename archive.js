@@ -4972,16 +4972,16 @@ function validParentheses(parens) {}
 // sumStrings("11", "99") // => "110"
 // #4kyu
 
-function sumStrings(a, b) {
-  const arrNumb = [+a, +b];
-  let resSumString = arrNumb.reduce((acc, el) => {
-    return acc + el;
-  });
-  return resSumString.toString();
-};
+// function sumStrings(a, b) {
+//   const arrNumb = [+a, +b];
+//   let resSumString = arrNumb.reduce((acc, el) => {
+//     return acc + el;
+//   });
+//   return resSumString.toString();
+// };
 
-console.log(sumStrings("11", "99"));
-console.log(typeof(sumStrings("11", "99")));
+// console.log(sumStrings("11", "99"));
+// console.log(typeof(sumStrings("11", "99")));
 
 //                                    ****************************************
 
@@ -4992,7 +4992,16 @@ console.log(typeof(sumStrings("11", "99")));
 // 3, 3  -->  [3, 9, 81]
 // #7kyu
 
-function squares(x, n) {}
+// function squares(x, n) {
+//   let squareArr = [x];
+//   while (squareArr.length < n) {
+//     let square = Math.pow(squareArr[squareArr.length - 1], 2);
+//     squareArr.push(square);
+//   }
+//   return squareArr;
+// }
+
+// console.log(squares(2, 5)); 
 
 //                                    ****************************************
 
