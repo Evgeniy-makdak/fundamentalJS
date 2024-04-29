@@ -616,15 +616,5 @@
 // if (typeof(a) == 'number') console.log('why?');   // в данном случае a остаётся number, так как метод toString() просто возвращает значение
 // // с типом строка, а сама переменная остаётся числом, как и объявлена вначале
 
-obj = {
-    a: 1,
-    b: 7,
-    c: 3,
-    d: 85,
-    e: -11,
-    f: -253,
-    j: 127
-  };
-
-const sortValues = Object.entries(obj).sort((a, b) => a[1] - b[1]);  
-console.log(sortValues);
+const a = [[1], [1, 1]];
+console.log(a.length);

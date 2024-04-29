@@ -5001,20 +5001,32 @@ function validParentheses(parens) {}
 //   return squareArr;
 // }
 
-// console.log(squares(2, 5)); 
+// console.log(squares(2, 5));
 
 //                                    ****************************************
 
 // Напишите функцию, которая при задании числа >= 0 возвращает массив подмассивов возрастающей длины.
 // Примечание: подмассивы должны быть заполнены единицами
 // Пример:
-// pyramid(0) => [ ]
-// pyramid(1) => [ [1] ]
-// pyramid(2) => [ [1], [1, 1] ]
-// pyramid(3) => [ [1], [1, 1], [1, 1, 1] ]
+// createArray(0) => [ ]
+// createArray(1) => [ [1] ]
+// createArray(2) => [ [1], [1, 1] ]
+// createArray(3) => [ [1], [1, 1], [1, 1, 1] ]
 // #6kyu
 
-function pyramid(n) {}
+function createArray(n) {
+  let result = [];
+  for (let i = 0; i < n; i++) {
+    let fix = [];
+    for (let j = 0; j <= i; j++) {
+      fix.push(1);
+    }
+    result.push(fix);
+  }
+  return result;
+}
+
+console.log(createArray(2));
 
 //                                    ****************************************
 
@@ -5111,3 +5123,17 @@ function nextSmaller(n) {}
 // alphanumeric("     ")  //  false
 // #5kyu
 function alphanumeric(string) {}
+
+//                                    ****************************************
+
+// Напишите функцию, которая при задании URL-адреса в виде строки анализирует только имя домена и возвращает его в виде строки
+// Пример:
+// "http://google.com" //  "google"
+// "http://google.co.jp"  //  "google"
+// "www.xakep.ru"  //  "xakep"
+// "https://youtube.com"  //  "youtube"
+// #5kyu
+
+function domainName(url) {}
+
+//                                    ****************************************
