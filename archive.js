@@ -5014,19 +5014,19 @@ function validParentheses(parens) {}
 // createArray(3) => [ [1], [1, 1], [1, 1, 1] ]
 // #6kyu
 
-function createArray(n) {
-  let result = [];
-  for (let i = 0; i < n; i++) {
-    let fix = [];
-    for (let j = 0; j <= i; j++) {
-      fix.push(1);
-    }
-    result.push(fix);
-  }
-  return result;
-}
+// function createArray(n) {
+//   let result = [];
+//   for (let i = 0; i < n; i++) {
+//     let fix = [];
+//     for (let j = 0; j <= i; j++) {
+//       fix.push(1);
+//     }
+//     result.push(fix);
+//   }
+//   return result;
+// }
 
-console.log(createArray(2));
+// console.log(createArray(2));
 
 //                                    ****************************************
 
@@ -5035,7 +5035,17 @@ console.log(createArray(2));
 // orderedCount("abracadabra") == [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]]
 // #7kyu
 
-function orderedCount() {}
+function orderedCount(string) {
+  const arrString = string.split('');
+  const resCount = arrString.reduce((acc, el) => {
+    if (el in acc) acc[el]++;
+    else acc[el] = 1;
+    return acc;
+  }, []);
+  return resCount;
+};
+
+console.log(orderedCount("abracadabra"));
 
 //                                    ****************************************
 
