@@ -616,5 +616,13 @@
 // if (typeof(a) == 'number') console.log('why?');   // в данном случае a остаётся number, так как метод toString() просто возвращает значение
 // // с типом строка, а сама переменная остаётся числом, как и объявлена вначале
 
-const a = [[1], [1, 1]];
-console.log(a.length);
+function factorial(n) {
+    let resFactorial = 1;
+    while (n >= 1) {
+        resFactorial*=n;
+        n--;
+    };
+    return resFactorial;
+};
+
+console.log(factorial(6));

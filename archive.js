@@ -5035,28 +5035,40 @@ function validParentheses(parens) {}
 // orderedCount("abracadabra") == [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]]
 // #7kyu
 
-function orderedCount(string) {
-  const arrString = string.split('');
-  const resCount = arrString.reduce((acc, el) => {
-    if (el in acc) acc[el]++;
-    else acc[el] = 1;
-    return acc;
-  }, []);
-  return resCount;
-};
+// function orderedCount(string) {
+//   const arrString = string.split('');
+//   const resCount = arrString.reduce((acc, el) => {
+//     if (el in acc) acc[el]++;
+//     else acc[el] = 1;
+//     return acc;
+//   }, []);
+//   return resCount;
+// };
 
-console.log(orderedCount("abracadabra"));
+// console.log(orderedCount("abracadabra"));
 
 //                                    ****************************************
 
 // Напишите функцию, которая при задании числа (n) возвращает n-е число в последовательности Фибоначчи.
 // Пример:
-// nthFibo(4) == 2
+// nthFibo(4) === 2
 // Потому что 2 - это четвертое число в последовательности Фибоначчи.
 // Для справки, первые два числа в последовательности Фибоначчи - это 0 и 1, а каждое последующее число - это сумма двух предыдущих.
 // #6kyu
 
-function nthFibo() {}
+// function nthFibo(n) {
+//   let nowN = 1;
+//   let prewN = 0;
+//   let fiboN = 0;
+//   for (let i = 1; i < n; i++) {
+//     fiboN = nowN + prewN;
+//     prewN = nowN;
+//     nowN = fiboN;
+//   };
+//   return fiboN;
+// };
+
+// console.log(nthFibo(8)); 
 
 //                                    ****************************************
 
