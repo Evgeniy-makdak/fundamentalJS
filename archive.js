@@ -5068,7 +5068,7 @@ function validParentheses(parens) {}
 //   return fiboN;
 // };
 
-// console.log(nthFibo(8)); 
+// console.log(nthFibo(8));
 
 //                                    ****************************************
 
@@ -5080,7 +5080,17 @@ function validParentheses(parens) {}
 // solution(10) => 23
 // #6kyu
 
-function solution() {}
+// function solution(n) {
+//   let solut = 0;
+//   for (let i = 3; i < n; i++) {
+//     if (i % 3 === 0 || i % 5 === 0) {
+//       solut+=i;
+//     };
+//   };
+//   return solut;
+// };
+
+// console.log(solution(10));
 
 //                                    ****************************************
 
