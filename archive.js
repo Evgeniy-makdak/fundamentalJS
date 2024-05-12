@@ -4746,7 +4746,19 @@ function removeParentheses(s) {}
 // '1?1?' -> ['1010', '1110', '1011', '1111']
 // #5kyu
 
-function possibilities(str) {}
+// function possibilities(str) {
+//   let resStr = [];
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === '?') {
+//       let temp1 = str.substring(0, i) + '0' + str.substring(i + 1);
+//       let temp2 = str.substring(0, i) + '1' + str.substring(i + 1);
+//       resStr.push(temp1, temp2);
+//     }
+//   }
+//   return resStr;
+// };
+
+// console.log(possibilities('1?1?')); 
 
 //                                    ****************************************
 
@@ -5104,7 +5116,15 @@ function validParentheses(parens) {}
 // 1                 -->  "1"
 // #5kyu
 
-function toUnderscore(string) {}
+function toUnderscore(string) {
+  const resArr = [];
+  let word = "";
+  for (let i = 0; i < string.lenngh; i++) {
+    if (string[i] >= "A" && string[i] <= "Z") {
+      
+    }
+  }
+}
 
 //                                    ****************************************
 
