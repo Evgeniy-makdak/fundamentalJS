@@ -4758,7 +4758,7 @@ function removeParentheses(s) {}
 //   return resStr;
 // };
 
-// console.log(possibilities('1?1?')); 
+// console.log(possibilities('1?1?'));
 
 //                                    ****************************************
 
@@ -5118,10 +5118,9 @@ function validParentheses(parens) {}
 
 function toUnderscore(string) {
   const resArr = [];
-  let word = "";
+  let word = '';
   for (let i = 0; i < string.lenngh; i++) {
-    if (string[i] >= "A" && string[i] <= "Z") {
-      
+    if (string[i] >= 'A' && string[i] <= 'Z') {
     }
   }
 }
@@ -5191,7 +5190,7 @@ function domainName(url) {}
 //                                    ****************************************
 
 // Нужно преобразовать строку в целое число. Строки просто представляют числа словами
-// Пример: 
+// Пример:
 // "один" => 1
 // "двадцать" => 20
 // "двести сорок шесть" => 246
@@ -5204,3 +5203,28 @@ function domainName(url) {}
 // #4kyu
 
 function parseInt(string) {}
+
+//                                    ****************************************
+
+// Реализуйте функцию, которая принимает в качестве аргумента последовательность и возвращает список элементов, в котором нет
+// одинаковых элементов и сохраняется исходный порядок элементов.
+
+// Пример:
+// uniqueInOrder('AAAABBBCCDAABBB')
+// => ['A', 'B', 'C', 'D', 'A', 'B']
+// uniqueInOrder('ABBCcAD')
+// => ['A', 'B', 'C', 'c', 'A', 'D']
+// #6kyu
+
+function uniqueInOrder(iterable) {
+  const startArray = iterable.split('');
+  let resArray = [startArray[0]];
+  for (let i = 1; i < startArray.length; i++) {
+    if (startArray[i] !== resArray[resArray.length - 1]) {
+      resArray.push(startArray[i]);
+    }
+  }
+  return resArray;
+}
+
+console.log(uniqueInOrder('ABBCcAD'));
