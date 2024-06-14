@@ -5164,8 +5164,8 @@ function nextSmaller(n) {}
 
 // В этом примере вам необходимо проверить, является ли строка ввода пользователя буквенно-цифровой
 // Строка имеет следующие условия, чтобы быть буквенно-цифровой:
-// - Хотя бы один символ ( ""недопустимо)
-// - Разрешенными символами являются прописные/строчные латинские буквы и цифры от 0до.9
+// - Хотя бы один символ (недопустимо)
+// - Разрешенными символами являются прописные/строчные латинские буквы и цифры от 0 до 9
 // - Никаких пробелов/подчеркивания
 // Пример:
 // alphanumeric("Mazinkaiser")  //  true
@@ -5173,7 +5173,15 @@ function nextSmaller(n) {}
 // alphanumeric("PassW0rd")  //  true
 // alphanumeric("     ")  //  false
 // #5kyu
-function alphanumeric(string) {}
+// function alphanumeric(string) {
+//   for (let i = 0; i < string.lenngh; i++) {
+//     if (!string[i].charCodeAt()) {
+//       return false;
+//     } return true;
+//   };
+// };
+
+// console.log(alphanumeric('qwerty'));
 
 //                                    ****************************************
 
@@ -5216,15 +5224,39 @@ function parseInt(string) {}
 // => ['A', 'B', 'C', 'c', 'A', 'D']
 // #6kyu
 
-function uniqueInOrder(iterable) {
-  const startArray = iterable.split('');
-  let resArray = [startArray[0]];
-  for (let i = 1; i < startArray.length; i++) {
-    if (startArray[i] !== resArray[resArray.length - 1]) {
-      resArray.push(startArray[i]);
-    }
-  }
-  return resArray;
-}
+// function uniqueInOrder(iterable) {
+//   const startArray = iterable.split('');
+//   let resArray = [startArray[0]];
+//   for (let i = 1; i < startArray.length; i++) {
+//     if (startArray[i] !== resArray[resArray.length - 1]) {
+//       resArray.push(startArray[i]);
+//     }
+//   }
+//   return resArray;
+// }
 
-console.log(uniqueInOrder('ABBCcAD'));
+// console.log(uniqueInOrder('ABBCcAD'));
+
+//                                    ****************************************
+
+// В этом задании необходимо написать функцию, которая принимает число n, и возвращает цифровой корень числа n. 
+// Если это значение имеет более одной цифры, продолжайте уменьшать таким образом, пока не будет получено однозначное число.
+// Пример кода:
+
+// 16  -->  1 + 6 = 7
+// 942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+// 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+// 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+
+// function finishSummer(n) {
+//   const arrN = n.toString().split('');
+//   let resSumm = arrN.reduce((acc, i) => acc + +i, 0);
+//   if (resSumm > 9) {
+//     return finishSummer(resSumm);
+//   } 
+//   return resSumm;
+// };
+
+// console.log(finishSummer(271));
+
+//                                    ****************************************
