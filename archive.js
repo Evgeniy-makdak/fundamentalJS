@@ -5260,3 +5260,32 @@ function parseInt(string) {}
 // console.log(finishSummer(271));
 
 //                                    ****************************************
+
+// Верните сумму всех четных чисел в последовательности Фибоначчи до числа, переданного в вашу функцию, но не включая его. 
+// Последовательность Фибоначчи - это ряд чисел, в котором следующее значение является сложением двух предыдущих. Серия начинается с 0 и 1:
+// Пример:
+// fibonacci(0)==0
+// fibonacci(33)==10
+// fibonacci(25997544)==19544084
+// #6kyu
+
+function fibonacci (max) {
+  let a = 0;
+  let b = 1;
+  let fiboArr = [];
+  let i = 0;
+  while (i < max) {
+    let temp = a + b;
+    if (temp % 2 === 0) {
+      fiboArr.push(temp);
+    }
+    a = b;
+    b = temp;
+    i++;
+  };
+  return fiboArr.reduce((acc, car) => acc + car);
+};
+
+console.log(fibonacci(5));
+
+//                                    ****************************************
