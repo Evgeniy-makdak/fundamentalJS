@@ -5327,14 +5327,16 @@ function parseInt(string) {}
 // multiplyAll([1, 2, 3])(2) = [2, 4, 6];
 // #7kyu
 
-function multiplyAll(arr, n) {
-  let mutateArr = [];
-  mutateArr.push(
-    arr.map((element) => {
-      return element * n;
-    })
-  );
-  return mutateArr;
-}
+// function multiplyAll(arr, n) {
+//   let mutateArr = [];
+//   mutateArr.push(
+//     arr.map((element) => {
+//       return element * n;
+//     })
+//   );
+//   return mutateArr;
+// }
 
-console.log(multiplyAll([1, 2, 3], 3));
+// console.log(multiplyAll([1, 2, 3], 3));
+
+//                                    ****************************************
